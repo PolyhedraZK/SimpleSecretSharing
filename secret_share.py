@@ -145,6 +145,14 @@ def reconstruct(in_files, out_file, n):
         print(out_bytes)
         out_file.write(out_bytes)
 
+if(len(sys.argv[1]) < 2):
+
+    print("Usage: python secret_share.py MODE param1 param2 ... paramk")
+    print("For MODE = 0, python secret_share.py 1 N T output_file1 output_file2 ... output_fileN")
+    print("MODE = 0 will generate secret share files, N is the number of shares, T is the threshold.")
+    print("For MODE = 1, python secret_share.py 0 N plaintext_file input_file1 input_file2 ... input_fileN")
+    print("MODE = 1 will reconstruct the plaintext, N is the number of files you have")
+
 mode = int(sys.argv[1])
 
 if mode == 0: #construct mode
